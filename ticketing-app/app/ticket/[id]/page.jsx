@@ -1,14 +1,15 @@
-import TicketCard from '@/app/{components}/TicketCardComponent/TicketCard';
-import React from 'react';
+import TicketCardById from '@/app/{components}/TicketCardComponent/TicketCardById';
 
-const Ticket = ({ params }) => {
+const TicketById = async ({ params }) => {
+  const response = await fetch(`http://localhost:3000/api/ticket/${params.id}`);
+  const ticket = await response.json();
   return (
-    <div className="md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <TicketCard />
-      <TicketCard />
-      <TicketCard />
+    <div className="flex mt-20">
+      <div className="w-3/4 mx-auto ">
+        <TicketCardById ticket={ticket.data} />
+      </div>
     </div>
   );
 };
 
-export default Ticket;
+export default TicketById;

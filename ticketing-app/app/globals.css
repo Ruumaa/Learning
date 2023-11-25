@@ -30,4 +30,7 @@
   .icon {
     @apply text-default-text text-xl;
   }
+  .error-form {
+    @apply m-px text-red-600;
+  }
 }
