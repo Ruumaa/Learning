@@ -1,8 +1,12 @@
+import { authOptions } from '@/lib/auth';
 import { faHome, faTicket, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 
-const Nav = () => {
+const Nav = async () => {
+  // const session = await getServerSession(authOptions);
+  // console.log(session);
   return (
     <nav className="flex justify-between mx-7 h-16 items-center">
       <div className="space-x-4">

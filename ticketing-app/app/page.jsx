@@ -4,6 +4,11 @@ import Filter from './{components}/Filter';
 import TicketCard from './{components}/TicketCardComponent/TicketCard';
 import { useState } from 'react';
 import { NextResponse } from 'next/server';
+// import { authOptions } from '@/lib/auth';
+// import { getServerSession } from 'next-auth';
+// import Link from 'next/link';
+import User from './{components}/User';
+// import { useSession } from 'next-auth/react';
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 export default function Home() {
@@ -38,7 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="">
+      <div>
         <Filter onFilterChange={handleFilterChange} />
       </div>
 
@@ -49,7 +54,9 @@ export default function Home() {
           ))
         ) : (
           <div className="text-xl font-bold font-serif text-center">
+            {/* {session.user} */}
             Ticket Not Found
+            <User />
           </div>
         )}
       </div>

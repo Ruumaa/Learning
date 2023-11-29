@@ -1,9 +1,11 @@
 'use client';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { useRouter } from 'next/navigation';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { mutate } from 'swr';
 
 const DeleteTicket = ({ id, title }) => {
   const router = useRouter();
@@ -16,7 +18,8 @@ const DeleteTicket = ({ id, title }) => {
       method: 'DELETE',
     });
     toast.success('Delete ticket success');
-    router.refresh();
+    router.push('/');
+    mutate('http://localhost:3000/api/ticket/');
     setIsOpen(false);
   };
 

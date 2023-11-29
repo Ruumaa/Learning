@@ -15,7 +15,7 @@ const FormCreate = ({ isEditing, initialValues, submit }) => {
       <div className="card w-1/2 shadow-xl  bg-slate-700">
         <div className="card-body">
           <div className="card-title justify-center text-4xl">
-            {isEditing ? <span>Update</span> : <span>Create</span>} New Ticket
+            {isEditing ? <span>Update</span> : <span>Create New</span>} Ticket
           </div>
           <form onSubmit={handleSubmit(submit)}>
             <div className="form-control w-full mx-auto mt-5">
